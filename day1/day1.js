@@ -55,27 +55,27 @@ function only_one_num(array) {
 }
 
 function highest_num_in_array(array) {
-    let num = -1;
-    // console.log("start");
-    // console.log(array);
+    let index = 0;
     for(let i = 0; i < array.length; i++) {
-        // console.log(array[i]);
-        if (array[i] > num) {
+        if (array[i] > array[index]) {
             // console.log("time to if" + i);
-            num = i
+            index = i
         }
     }
-    return convert_index_to_num(num)
+    return convert_index_to_num(index)
 }
 
 function lowest_num_in_array(array) {
-    let num = 99;
+    let index = 0;
     for(let i = 0; i < array.length; i++) {
-        if (array[i] !== -1 && array[i] < num) {
-            num = i
+        if (array[index] == -1) {
+            index = i
+        }
+        if (array[i] !== -1 && array[i] < array[index]) {
+            index = i
         }
     }
-    return convert_index_to_num(num)
+    return convert_index_to_num(index)
 }
 
 function convert_index_to_num(index) {
